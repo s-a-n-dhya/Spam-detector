@@ -74,10 +74,10 @@ ensemble_model.fit(X_train_vec, y_train)
 
 # 8. Evaluate
 y_pred = ensemble_model.predict(X_test_vec)
-print("✅ Accuracy:", accuracy_score(y_test, y_pred))
+print("Accuracy:", accuracy_score(y_test, y_pred))
 print(classification_report(y_test, y_pred))
 
 # 9. Save model and vectorizer
 joblib.dump(ensemble_model, "model.pkl")
 joblib.dump(vectorizer, "vectorizer.pkl")
-print("✅ Final ensemble model saved.")
+print("Final ensemble model saved.")
