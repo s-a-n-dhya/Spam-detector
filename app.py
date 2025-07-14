@@ -14,12 +14,12 @@ def clean_text(text):
     return re.sub(r"\s+", " ", text).strip()
 
 # Streamlit UI
-st.title("📱 SMS Spam Detector")
+st.title("SMS Spam Detector")
 st.markdown("Enter a message below to check if it's **SPAM** or **NOT SPAM**.")
 
-user_input = st.text_area("✉️ Message Text")
+user_input = st.text_area("✉ Message Text")
 
-if st.button("🚀 Detect Spam"):
+if st.button("Detect Spam"):
     if not user_input.strip():
         st.warning("Please enter a message.")
     else:
@@ -28,7 +28,7 @@ if st.button("🚀 Detect Spam"):
         pred = model.predict(vec)[0]
         proba = model.predict_proba(vec)[0]
 
-        st.markdown("### 🔍 Prediction Confidence:")
+        st.markdown("### Prediction Confidence:")
         st.write(f"✅ Not Spam: {proba[0]*100:.2f}%")
         st.write(f"❌ Spam: {proba[1]*100:.2f}%")
 
